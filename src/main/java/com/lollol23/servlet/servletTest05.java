@@ -20,11 +20,11 @@ public class servletTest05 extends HttpServlet{
 		
 		PrintWriter out = response.getWriter();
 		
-		out.print("<html><head><title>구구단</title><head><body><ui>");
+		out.print("<html><head><title>구구단</title><head><body><ul>");
 		for(int i = 1; i <10; i++) {
 			out.println("<li>" + base + " X " + i + " = " + base * i + "</li>");
 		}
-		out.println("</ui></body></html>");
+		out.println("</ul></body></html>");
 	}
 	
 }
