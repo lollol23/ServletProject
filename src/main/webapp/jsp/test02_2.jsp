@@ -16,9 +16,9 @@
 
 		String s = "";
 		if(request.getParameter("type").equals("hour")) {
-			s = "현재날짜" + formatHour.format(now);
+			s = "현재 시간" + formatHour.format(now);
 		} else {
-			s = "현재시간" + formatYear.format(now);
+			s = "현재 날짜" + formatYear.format(now);
 		}
 	%>
 	<h1><%=s %></h1>
