@@ -12,11 +12,11 @@
 		int num2 = Integer.parseInt(request.getParameter("number2"));
 		String calculate = request.getParameter("what");
 		double result = 0;
-		if(calculate.equals("sum")) {
+		if(calculate.equals("+")) {
 			result = num1 + num2;
-		} else if(calculate.equals("sub")) {
+		} else if(calculate.equals("-")) {
 			result = num1 - num2;
-		} else if(calculate.equals("mul")) {
+		} else if(calculate.equals("X")) {
 			result = num1 * num2;
 		} else {
 			result = (double)num1 / num2;
