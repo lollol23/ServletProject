@@ -16,7 +16,7 @@
 		scoreMap.put("english",72);
 		scoreMap.put("math",90);
 		scoreMap.put("science",100);
-		Set <String> keys = scoreMap.keySet();
+		Set <String> keys = scoreMap.keySet();			
 	%>
 	<table border="1">
 		<%
