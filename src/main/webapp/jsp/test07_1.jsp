@@ -18,6 +18,7 @@
 		<div class="d-flex">
 		<input type="text" name="menu" class="form-control col-3">
 		<label><input type="checkbox" name="except" value="nonUnder4" class="ml-3">4점 이하 제외</label><br>
+		<label class="d-none"><input type="checkbox" name="except" value="hidden" class="ml-3" checked="checked">hidden</label>
 		</div>
 		<button type="submit" class="btn btn-primary mt-3">검색</button>
 	</form>

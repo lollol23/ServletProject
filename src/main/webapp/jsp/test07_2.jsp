@@ -30,7 +30,7 @@
 		map = new HashMap<String, Object>() {{ put("name", "반올림피자"); put("menu", "피자"); put("point", 4.3); } };
 		list.add(map);
 		String menu = request.getParameter("menu");
-		String except = request.getParameter("except");
+		String[] except = request.getParameterValues("except");
 	%>
 	<div class="container">
 		<h1 class="text-center">검색 결과</h1>
@@ -41,10 +41,10 @@
 				<th>별점</th>
 			</tr>
 			<%
-				if(except.equals("nonUnder4")) {
+				if(Arrays.asList(except).contains("nonUnder4")) {
 					for(int i = 0; i < list.size(); i++) {
 						double point = (double)list.get(i).get("point");
-						if(point > 4.0 && menu.equals(list.get(i).get("menu"))) {
+						if(menu.equals(list.get(i).get("menu")) && point > 4) {
 							%>
 							<tr>
 								<td><%=list.get(i).get("menu") %></td>
@@ -54,12 +54,9 @@
 						<%
 						}
 					}
-						
 				} else {
 					for(int i = 0; i < list.size(); i++) {
 						if(menu.equals(list.get(i).get("menu"))) {
-							
-						
 							%>
 							<tr>
 								<td><%=list.get(i).get("menu") %></td>
@@ -69,6 +66,7 @@
 						<%
 						}
 					}
+					
 				}
 			%>
 		</table>
