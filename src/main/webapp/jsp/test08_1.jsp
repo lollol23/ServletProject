@@ -59,33 +59,31 @@
 		};
 		list.add(map);
 	%>
-	<form method="post" action="/jsp/test08_2.jsp" name="form">
-		<div class="container">
-			<h1 class="font-weight-bold text-center mt-2">책 목록</h1>
-			<table class="table">
-				<tr class="text-center">
-					<th class="col-2">id</th>
-					<th class="col-2">표지</th>
-					<th class="col-8">제목</th>
+	<div class="container">
+		<h1 class="font-weight-bold text-center mt-2">책 목록</h1>
+		<table class="table">
+			<tr class="text-center">
+				<th class="col-2">id</th>
+				<th class="col-2">표지</th>
+				<th class="col-8">제목</th>
+			</tr>
+			<%
+				for(int i = 0; i < list.size(); i++) {
+			%>
+				<tr	class="text-center">
+					<td class="col-2" 	><%=list.get(i).get("id") %></td>	
+					<td class="col-2"><img src="<%=list.get(i).get("image") %>" width="200" height="300"></td>
+					<td class="col-8"><h1><a href="http://localhost:8080/jsp/test08_2.jsp?count=<%=i %>"><%=list.get(i).get("title") %></a></h1></td>
+					<td><input type="hidden" name="count" value=<%=i %>></td>
 				</tr>
-				<%
-					for(int i = 0; i < list.size(); i++) {
-				%>
-					<tr	class="text-center">
-						<td class="col-2" 	><%=list.get(i).get("id") %></td>	
-						<td class="col-2"><img src="<%=list.get(i).get("image") %>" width="200" height="300"></td>
-						<td class="col-8"><h1><a href="#" onclick="javascript:document.form.submit();"><%=list.get(i).get("title") %></a></h1></td>
-						<td><input type="hidden" name="count" value=<%=i %>></td>
-					</tr>
-					
-				<%
-					}
-				%>
-			</table>
-			
-		</div>
+				
+			<%
+				}
+			%>
+		</table>
+		
+	</div>
 	
-	</form>
 
 
 </body>
